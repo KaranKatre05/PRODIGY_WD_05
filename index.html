@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenith | Global Weather</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="weather-effect-container" class="weather-bg-layer">
+        </div>
+
+    <div class="glass-wrapper">
+        
+        <aside class="sidebar">
+            <div class="logo-area">
+                <i class="fas fa-globe-americas"></i> Zenith<b>Cast</b>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" id="cityInput" placeholder="Search Global City..." value="Tokyo">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="current-weather">
+                <h2 id="cityName">--</h2>
+                <p id="currentDate">--</p>
+                
+                <div class="hero-icon-box">
+                    <img src="" id="mainIcon" alt="weather">
+                </div>
+                
+                <div class="temp-box">
+                    <h1 id="temp">0°</h1>
+                    <p id="weatherDesc">--</p>
+                </div>
+                
+                <div class="divider"></div>
+
+                <div class="daily-forecast-container">
+                    <h3>5-Day Outlook</h3>
+                    <div class="daily-list" id="dailyGrid">
+                        </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="dashboard">
+            <header>
+                <div class="header-text">
+                    <h2>Environmental Analysis</h2>
+                    <p>Real-time metrics & forecast</p>
+                </div>
+                <div class="live-clock" id="clock">00:00:00</div>
+            </header>
+
+            <div class="bento-grid">
+                
+                <div class="card card-wide aqi-section">
+                    <div class="card-head"><span>Air Quality Index</span> <i class="fas fa-lungs"></i></div>
+                    <div class="aqi-wrapper">
+                        <div class="gauge-container">
+                            <div class="gauge-arc"></div>
+                            <div class="gauge-needle" id="aqiNeedle"></div>
+                            <div class="gauge-center"></div>
+                            <div class="gauge-labels">
+                                <span>Good</span>
+                                <span>Hazard</span>
+                            </div>
+                        </div>
+                        <div class="aqi-info">
+                            <h2 id="aqiVal">0</h2>
+                            <h4 id="aqiStatus">--</h4>
+                            <p class="aqi-desc" id="aqiDesc">--</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-head"><span>UV Index</span> <i class="fas fa-sun"></i></div>
+                    <div class="ring-chart">
+                        <svg viewBox="0 0 36 36" class="circular-chart">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle" id="uvRing" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                        <div class="ring-text">
+                            <span id="uvVal">0</span>
+                            <small>UV</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-head"><span>Wind Flow</span> <i class="fas fa-wind"></i></div>
+                    <div class="stat-value">
+                        <span id="windSpeed">0</span> <small>km/h</small>
+                    </div>
+                    <div class="compass-row">
+                        <i class="far fa-compass" id="compass"></i> <span id="windDir">N</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-head"><span>Humidity</span> <i class="fas fa-tint"></i></div>
+                    <div class="stat-value">
+                        <span id="humidity">0</span> <small>%</small>
+                    </div>
+                    <div class="bar-container"><div class="bar-fill" id="humidBar"></div></div>
+                </div>
+
+                <div class="card">
+                    <div class="card-head"><span>Visibility</span> <i class="fas fa-eye"></i></div>
+                    <div class="stat-value">
+                        <span id="visibility">0</span> <small>km</small>
+                    </div>
+                    <p class="stat-sub" id="visText">--</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-head"><span>Sun Cycle</span> <i class="far fa-clock"></i></div>
+                    <div class="sun-list">
+                        <div class="sun-item">
+                            <i class="fas fa-arrow-up text-warm"></i> <span id="sunrise">--:--</span>
+                        </div>
+                        <div class="sun-item">
+                            <i class="fas fa-arrow-down text-cool"></i> <span id="sunset">--:--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="section-title">24-Hour Forecast</h3>
+            <div class="hourly-strip" id="hourlyBox"></div>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
